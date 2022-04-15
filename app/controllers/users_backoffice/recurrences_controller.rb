@@ -12,7 +12,8 @@ class UsersBackoffice::RecurrencesController < UsersBackofficeController
 
   def payment
     @recurrence = Recurrence.find(params[:recurrence_id])
-
+    @recurrence.user_profile = current_user.user_profile
+    
     @transaction = Transaction.new(
       recurrence_id: @recurrence.id,
       user_profile_id: @recurrence.user_profile_id,

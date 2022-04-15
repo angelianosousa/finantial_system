@@ -88,7 +88,8 @@
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt=""><%= current_user.email %>
+                    <%= @user_profile.attached? ? image_tag(@user_profile) : image_tag("https://via.placeholder.com/150C/", class:"img-circle profile_img") %>
+                    <%= current_user.email %>
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                     <%= link_to edit_users_backoffice_user_profile_path(current_user), class:"dropdown-item" do %>

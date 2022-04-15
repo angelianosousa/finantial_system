@@ -34,7 +34,7 @@ Default user for heroku
 
 ## Importants Links
 
-* In production: https://www.herokuapp.com/finantial-system.com.br
+* In production: https://finantial-system.herokuapp.com/
 * In Staging: https://staging-finantial-system.herokuapp.com/
 
 ## Author

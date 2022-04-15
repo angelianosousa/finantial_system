@@ -1,4 +1,41 @@
-pt-BR:
+'pt-BR':
+  active_record:
+    attributes:
+      user: 
+        id: 'Identificador'
+        email: 'Email'
+        password: 'Senha'
+        password_confirmation: 'Confirmação de Senha'
+      user_profile:
+        id: 'Identificador'
+        user_id: 'Identificador de Usuário'
+        fullname: 'Nome Completo'
+        avatar: 'Foto de Perfil'
+      recurrence:
+        user_profile_id: 'Identificador de Perfil'
+        category_id: 'Identificador de Categoria'
+        title: 'Titulo da Conta'
+        price_cents: 'Valor da Conta'
+        price_currency: 'Moeda'
+        pay: 'Status do pagamento'
+        date_expire: 'Data de Vencimento'
+      transaction:
+        user_profile_id: 'Identificador de Perfil'
+        category_id: 'Identificador de Categoria'
+        recurrence_id: 'Identificador de Conta'
+        title: 'Titulo da Movimentação'
+        price_cents: 'Valor do pagamento'
+        price_currency: 'Moeda'
+        date: 'Data do pagamento'
+      notification:
+        user_profile_id: 'Identificador de Perfil'
+        recurrence_id: 'Identificador de Conta'
+        title: 'Titulo da notificação'
+        description: 'Descrição'
+        read: 'Status de leitura da notificação'
+      category:
+        title: 'Nome da Categoria'
+
   number:
     format:
       delimiter: ","
