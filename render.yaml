@@ -1,7 +1,7 @@
 databases:
   - name: finances_system
     databaseName: finances_system
-    user: postgres
+    user: angeliano
 
 services:
   - type: web
