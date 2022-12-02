@@ -7,6 +7,6 @@ class UsersBackoffice::DashboardController < UsersBackofficeController
 
     @transactions = @q.result(distinct: true).includes(:account, :category)
 
-    @accounts = Account.group(:title).sum(:price_cents)
+    @balance = @transactions.recipes.sum(:price_cents) - @transactions.expenses.sum(:price_cents)
   end
 end

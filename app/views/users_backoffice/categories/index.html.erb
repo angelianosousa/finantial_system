@@ -8,28 +8,60 @@
   </nav>
 </div><br>
 
-<div class='card' style='border-radius: 20px;'>
-  <div class='card-body'>
-    <table class='table table-hover table-sm table-borderless'>
-      <thead class='bg-dark text-white'>
-        <tr>
-          <th>Title</th>
-          <th>Category type</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @categories.each do |category| %>
-          <tr>
-            <td><%= category.title %></td>
-            <td><%= transaction_status category.category_type %></td>
-            <td><%= render 'actions', category: category %></td>
-          </tr>
+<div class='row'>
+  <div class='col'>
+    <div class='card border border-success'>
+      <div class='card-header bg-success text-white'>
+        <span class='icon'><i class='fa fa-arrow-up'> RECIPES</i></span>
+      </div>
+      <div class='card-body'>
+        <table class='table table-hover table-sm table-borderless'>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @categories.recipes.each do |category| %>
+              <tr>
+                <td><%= category.title %></td>
+                <td><%= render 'actions', category: category %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
-        <% end %>
-      </tbody>
-    </table>
+  <div class='col'>
+    <div class='card border border-danger'>
+      <div class='card-header bg-danger text-white'>
+        <span class='icon'><i class='fa fa-arrow-down'> EXPENSES</i></span>
+      </div>
+      <div class='card-body'>
+        <table class='table table-hover table-sm table-borderless'>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @categories.expenses.each do |category| %>
+              <tr>
+                <td><%= category.title %></td>
+                <td><%= render 'actions', category: category %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
+
+
 
 <%= render partial: 'users_backoffice/categories/new', locals: { category: @category = Category.new} %>

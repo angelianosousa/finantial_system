@@ -1,7 +1,7 @@
 <div class='container mb-4' style="padding-bottom: 70px;">
 
   <nav class="navbar navbar-light mb-2" style="background-color:DarkSlateGray;color:white;border-radius:10px;">
-    <a class="navbar-brand" href="/users_backoffice/welcome/index">Graphic Panel</a>
+    <a class="navbar-brand" href="/users_backoffice/dashboard/index">Graphic Panel</a>
   </nav>
 
   <%= render 'search_filter' %>
@@ -12,7 +12,7 @@
         <div class='card border-primary'>
           <div class='card-body'>
             <span class="count_top" style="color: blue"><i class="fa fa-bank"></i> Current Balance</span>
-            <div class="count" style="font-size:25px;"><%= humanized_money_with_symbol(@transactions.recipes.sum(:price_cents) - @transactions.expenses.sum(:price_cents)) %></div>
+            <div class="count" style="font-size:25px;"><%= humanized_money_with_symbol(@balance) %></div>
           </div>
         </div>
       </div>
